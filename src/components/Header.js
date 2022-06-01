@@ -2,11 +2,11 @@ import React from "react";
 
 function Header() {
   return (
-    <div>
+    <header>
       <h1>
-        The<strong>Aniplexer</strong>!
+        The <strong>Aniplexer</strong>!
       </h1>
-    </div>
+    </header>
   );
 }
 

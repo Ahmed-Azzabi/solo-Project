@@ -12,6 +12,7 @@ import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import MainView from "./components/MainView";
+import Login from "./components/login";
 
 function App() {
   const [aniList, SetAniList] = useState([]);
@@ -58,6 +59,7 @@ function App() {
           FetchAni={FetchAni}
         />
       </div>
+      <Login />
     </div>
   );
 }
