@@ -1,6 +1,3 @@
-const sampleData = [
-  { anime: "one punch man", genre: "drama", producer: "japan" },
-];
+const sampleData = [{ id: 1, body: "I love this anime", user: "Rev" }];
 
 module.exports = { sampleData };
- 

@@ -2,25 +2,32 @@ const db = require("./index");
 const data = require("./sampleData");
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
-import axios from "axios";
 
-const AnimeSchema = new mongoose.Schema({
+const reviewSchema = new mongoose.Schema({
   id: Number,
-  news: String,
-  videos: URL,
-  pictures: String,
-  reviews: String,
+  user: String,
+  body: String,
 });
 
-const Anime = mongoose.model("Anime", AnimeSchema);
+const Review = mongoose.model("Review", reviewSchema);
 
-const insertData = function () {
-  Block.create(data)
-    .then(() => console.log("Database seeded successfully"))
-    .catch((error) => {
-      console.log("error seeding");
-    })
-    .finally(() => db.close());
+const getReview = function () {
+  console.log("database")
+  return Review.find();
 };
 
-insertData();
+const addReview = function (id, user, body) {
+  return Review.create({ id: id, user: user, body: body });
+};
+
+const insertData = function () {
+  console.log(data.sampleData);
+  // Review.create(data.sampleData)
+  //   .then(() => console.log("Database seeded successfully"))
+  //   .catch((error) => {
+  //     console.log(error);
+  //   })
+  //   .finally(() => db.close());
+};
+
+module.exports = { addReview, getReview };
