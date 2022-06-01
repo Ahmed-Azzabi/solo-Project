@@ -1,14 +1,21 @@
 import React from "react";
 
-function Sidebar() {
+function Sidebar({ popularAnime }) {
   return (
     <div>
       <aside>
         <nav>
           <h3>Popular Anime</h3>
-          <a href="#" target="_blank" rel="noreferrer">
-            Attack on titan
-          </a>
+          {popularAnime.map((anime) => (
+            <a
+              href={anime.url}
+              target="_blank"
+              rel="noreferrer"
+              key={anime.mal_id}
+            >
+              {anime.title}
+            </a>
+          ))}
         </nav>
       </aside>
     </div>
